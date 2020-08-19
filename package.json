@@ -10,6 +10,10 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
   },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -30,5 +34,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
   }
 }
