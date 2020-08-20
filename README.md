@@ -1,3 +1,30 @@
+# Setup for Formatting Code Automatically
+
+## `husky` + `lint-staged` + `prettier`
+
+* `husky` makes it possible to use githooks as if they are npm scripts. https://github.com/typicode/husky
+* `lint-staged` allows us to run scripts on staged files in git. https://github.com/okonet/lint-staged
+* `prettier` is the JavaScript formatter we will run before commits. https://github.com/prettier/prettier
+
+## Resources
+* https://create-react-app.dev/docs/setting-up-your-editor/#formatting-code-automatically
+* https://prettier.io/docs/en/install.html
+
+## How It's Set Up
+
+Basically followed the create-react-app instruction, and tweaked some parts based on the prettier doc.
+
+* Install exact version of prettier for consistent formatting for everyone in the project.
+* Install the packages in devDependencies.
+* Add `.prettierrc.json` and `.prettierignore`
+* `eslint-config-prettier` doesn't seem to be needed for `create-react-app` project.
+* `lint-staged` config in the create-react-app instruction works better. 
+  * `eslint --fix` fails in a create-react-app project. Also it shouldn't be needed when using Prettier for formatting.
+  * Whitelisting file types work better than blacklisting in `.prettierignore`
+
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
