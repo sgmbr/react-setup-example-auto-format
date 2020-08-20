@@ -11,8 +11,10 @@
     "react-scripts": "3.4.3"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.11"
+    "lint-staged": "^10.2.11",
+    "prettier": "2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,7 +23,11 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "prettier",
+      "prettier/react"
+    ]
   },
   "browserslist": {
     "production": [
@@ -41,6 +47,8 @@
     }
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "prettier --write"]
+    "**/*.js": [
+      "prettier --write"
+    ]
   }
 }
